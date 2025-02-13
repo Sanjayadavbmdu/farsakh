@@ -16,10 +16,18 @@ Route::get('/requests',[function(){
     return view('tenant.requests.index');
 }])->name('tenant.request');
 
+Route::get('/show-requests',[function(){
+    return view('tenant.requests.show');
+}])->name('tenant.request.show');
+
 
 Route::get('/maintenance',[function(){
     return view('tenant.maintenance.index');
 }])->name('tenant.maintenance');
+
+Route::get('/show-reports-maintenance',[function(){
+    return view('tenant.maintenance.show');
+}])->name('tenant.maintenance.show');
 
 
 Route::get('/payments',[function(){

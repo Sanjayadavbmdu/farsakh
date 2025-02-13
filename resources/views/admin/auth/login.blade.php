@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom Styles -->
     <style>
-
-:root {
+        :root {
             /* --primary-color: #206843; */
-            --primary-color: #213a59;
-            
+            --primary-color: #206843;
+
             /* #213a59 */
-       
+
             --secondary-color: #3a8d5c;
             --accent-color: #e9f5ef;
         }
@@ -24,7 +24,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #213a59, #213a59);
+            background: linear-gradient(135deg, #206843, #206843);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -167,6 +167,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="language-dropdown">
@@ -183,35 +184,35 @@
     </div>
     <div class="login-box">
         <div class="icon">
-            <img src="{{asset('logo.png')}}"  height="80px" alt="">
-           
+            <img src="{{ asset('logo.png') }}" height="80px" alt="">
+
         </div>
         <h2>Admin Login</h2>
         <p></p>
 
         @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
 
-    @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
 
-    <!-- Display Validation Errors -->
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul class="mb-0">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-        <form action="{{route('admin.login')}}" method="POST">
+        <!-- Display Validation Errors -->
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form action="{{ route('admin.login') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <input type="email" name="email" class="form-control" placeholder="Email Address" required>
@@ -225,21 +226,21 @@
             </div>
         </form>
     </div>
-<script>
-
-    function changeLanguage() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            includedLanguages: 'en,ar',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
-    }
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        function changeLanguage() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,ar',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
     <!-- Bootstrap JS and Icons -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </body>
+
 </html>

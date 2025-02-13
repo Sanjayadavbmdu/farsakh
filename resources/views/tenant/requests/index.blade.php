@@ -35,6 +35,14 @@
                         <div class="">
                             <form>
                                 <div class="mb-3">
+                                    <label for="simpleinput" class="form-label">Property</label>
+                                    <select name="" class="form-select" id="">
+                                        <option value="" selected disabled>Select Property </option>
+                                        <option value="">Property1</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="simpleinput" class="form-label">Request Type</label>
                                     <select class="form-select" id="example-select">
                                         <option value="-1" selected disabled>Select Request Type</option>
@@ -53,7 +61,7 @@
                                 </div>
 
                                 <button class="btn btn-primary">Submit Request</button>
-                                <a href="#" class="btn btn-primary">Show Requests</a>
+                                <a href="{{route('tenant.request.show')}}" class="btn btn-primary">Show Requests</a>
                                
                             </form>
                         </div> <!-- end col -->

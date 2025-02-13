@@ -1,4 +1,4 @@
-@extends('tenant.includes.master')
+@extends('admin.includes.master')
 
 
 @section('content')
@@ -82,7 +82,7 @@
 
                     <td>
                         <div class="d-flex align-items-center gap-2">
-                            <img src="{{asset('tenant/assets/images/users/avatar-3.jpg"')}}'
+                            <img src="{{asset('tenant/assets/images/users/avatar-3.jpg')}}"
                                 alt="user avatar" class="avatar-xs rounded-circle">
 
                             <h5 class="fs-14 mb-0 fw-medium">
