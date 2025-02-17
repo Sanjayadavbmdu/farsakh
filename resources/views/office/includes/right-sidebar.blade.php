@@ -16,17 +16,17 @@
                 <div class="collapse" id="sidebarInvoice1">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{route('tenant.request')}}" class="side-nav-link">
+                            <a href="{{route('office.new_addtions.add.owner')}}" class="side-nav-link">
                                 <span class="menu-text">Add new property owners</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{route('tenant.request.show')}}" class="side-nav-link">
+                            <a href="{{route('office.new_addtions.add.tenant')}}" class="side-nav-link">
                                 <span class="menu-text">Add new tenants</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{route('tenant.request.show')}}" class="side-nav-link">
+                            <a href="{{route('office.new_addtions.add.property')}}" class="side-nav-link">
                                 <span class="menu-text">Register new properties</span>
                             </a>
                         </li>
@@ -43,17 +43,17 @@
                 <div class="collapse" id="sidebarInvoice2">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{route('tenant.request')}}" class="side-nav-link">
+                            <a href="{{route('office.requests.index')}}" class="side-nav-link">
                                 <span class="menu-text">Property management requests</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{route('tenant.request.show')}}" class="side-nav-link">
+                            <a href="{{route('office.requests.evaction')}}" class="side-nav-link">
                                 <span class="menu-text">Evacuation requests</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{route('tenant.request.show')}}" class="side-nav-link">
+                            <a href="{{route('office.requests.auction')}}" class="side-nav-link">
                                 <span class="menu-text">Auction requests</span>
                             </a>
                         </li>
@@ -70,12 +70,12 @@
                 <div class="collapse" id="sidebarInvoice3">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{route('tenant.request')}}" class="side-nav-link">
+                            <a href="{{route('office.contract.active_expire')}}" class="side-nav-link">
                                 <span class="menu-text">View active and expired contracts</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{route('tenant.request.show')}}" class="side-nav-link">
+                            <a href="{{route('office.contract.renew')}}" class="side-nav-link">
                                 <span class="menu-text">Organize new contracts or renew existing ones</span>
                             </a>
                         </li>
@@ -92,20 +92,20 @@
                 <div class="collapse" id="sidebarInvoice4">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{route('tenant.request')}}" class="side-nav-link">
+                            <a href="{{route('office.finance.index')}}" class="side-nav-link">
                                 <span class="menu-text">Issue receipts and payments</span>
                             </a>
                         </li>
-                        <li class="side-nav-item">
-                            <a href="{{route('tenant.request.show')}}" class="side-nav-link">
+                        {{-- <li class="side-nav-item">
+                            <a href="{{route('office.finance.generate-receipt')}}" class="side-nav-link">
                                 <span class="menu-text">Generate receipt reports</span>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </li>
 
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarInvoice5" aria-expanded="false" aria-controls="sidebarInvoice5" class="side-nav-link">
                     <span class="menu-icon"><i class="fas fa-envelope" style="color: #2d714e"></i></span>
                     <span class="menu-text">Message Management</span>
@@ -125,6 +125,15 @@
                         </li>
                     </ul>
                 </div>
+            </li> --}}
+
+
+
+            <li class="side-nav-item">
+                <a href="{{ route('office.message.index') }}" class="side-nav-link">
+                    <span class="menu-icon"><i class="fas fa-envelope" style="color: #2d714e"></i></span>
+                    <span class="menu-text">Message Management</span>
+                </a>
             </li>
         </ul>
 

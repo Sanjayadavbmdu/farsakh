@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{app()->getLocale()}}" dir="{{ session('direction', 'ltr') }}">
 
 <head>
     <meta charset="utf-8" />
-    <title>Admin Dashboard| Farsak</title>
+    <title>{{ GoogleTranslate::trans('Admin Dashboard| Farsak',app()->getLocale())}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -38,33 +38,11 @@
     <link href="{{ asset('tenant/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 
   
-    <script type="text/javascript">
-        let translateInstance = null;
-
-        function googleTranslateElementInit() {
-            translateInstance = new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,ar',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
-
-            // Initialize with saved language
-            const savedLang = localStorage.getItem('selectedLanguage');
-            if(savedLang === 'ar') {
-                triggerArabicTranslation();
-            }
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+   
     <!-- Theme Config Js -->
     <script src="{{ asset('tenant/assets/js/config.js') }}"></script>
     <style>
-        [dir="rtl"] {
-        direction: rtl;
-        text-align: right;
-    }
+
     
     /* Fix dropdown position for RTL */
     [dir="rtl"] .dropdown-menu-end {
@@ -72,11 +50,7 @@
         left: 0 !important;
     }
 
-    /* Hide Google's default translator */
-    .skiptranslate {
-        display: none !important;
-    }
-
+   
     /* Prevent body shift */
     body {
         top: 0 !important;
@@ -141,68 +115,7 @@
     @include('admin.includes.foot')
 
     @yield('script')
-  <!-- Language Handling Script -->
-  <script>
-    // Initialize language on load
-    document.addEventListener('DOMContentLoaded', () => {
-        const savedLang = localStorage.getItem('selectedLanguage') || 'en';
-        setLanguage(savedLang, false);
-        
-        // Hide Google's banner
-        const observer = new MutationObserver(() => {
-            const banner = document.querySelector('.goog-te-banner');
-            if(banner) banner.style.display = 'none';
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-    });
-
-    // Language change handler
-    function setLanguage(lang, userTriggered = true) {
-        if(lang === localStorage.getItem('selectedLanguage') && userTriggered) return;
-
-        // Update UI state
-        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-        document.getElementById('selectedLang').textContent = lang === 'ar' ? 'Ar' : 'En';
-        localStorage.setItem('selectedLanguage', lang);
-
-        // Handle translation
-        if(lang === 'ar') {
-            triggerArabicTranslation();
-        } else {
-            resetToEnglish();
-        }
-    }
-
-    function triggerArabicTranslation() {
-        const iframe = document.querySelector('.goog-te-menu-frame');
-        if(iframe) {
-            iframe.onload = () => {
-                const select = iframe.contentDocument.querySelector('.goog-te-menu2-select');
-                if(select) {
-                    select.value = 'ar';
-                    select.dispatchEvent(new Event('change'));
-                }
-            };
-            iframe.contentWindow.location.reload();
-        }
-    }
-
-    function resetToEnglish() {
-        if(translateInstance) {
-            translateInstance.restore();
-            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            document.documentElement.setAttribute('dir', 'ltr');
-        }
-    }
-
-    // Event listeners
-    document.querySelectorAll('.change-lang').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            setLanguage(btn.dataset.lang);
-        });
-    });
-</script>
+ 
 
 
 

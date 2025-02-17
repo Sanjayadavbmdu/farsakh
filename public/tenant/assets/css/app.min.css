@@ -17214,11 +17214,12 @@ html[data-sidenav-size=compact]:not([data-layout=topnav]) .menu-arrow {
 html[data-sidenav-size=sm-hover]:not([data-layout=topnav]) .page-content {
     margin-left: var(--abstack-sidenav-width-sm)
 }
-/* 
+
 html[data-sidenav-size=sm-hover]:not([data-layout=topnav]) [dir="rtl"] .page-content {
     margin-right: var(--abstack-sidenav-width-sm);
     min-height: 100%;
-} */
+    margin-right: 70px;
+}
 
 
 html[data-sidenav-size=sm-hover]:not([data-layout=topnav]) .sidenav-menu:not(:hover) {

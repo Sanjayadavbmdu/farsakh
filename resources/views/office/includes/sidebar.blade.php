@@ -26,7 +26,7 @@
              <hr style="margin: 0.0005rem 0;">
 
              <li class="side-nav-item">
-                 <a href="{{ route('maintenance.dashboard') }}" class="side-nav-link">
+                 <a href="{{ route('office.dashboard') }}" class="side-nav-link">
                      <span class="menu-icon"><i class="fas fa-dashboard" style="color: #2d714e"></i></span>
                      <span class="menu-text"> Dashboard </span>
                      <span class="badge bg-danger rounded">3</span>
@@ -64,7 +64,7 @@
 
 
              <li class="side-nav-item">
-                 <a href="{{ route('maintenance.payments') }}" class="side-nav-link">
+                 <a href="{{ route('office.additional.request') }}" class="side-nav-link">
                      <span class="menu-icon"><i class="fas fa-credit-card" style="color: #2d714e"></i></span>
                      <span class="menu-text">Additional Requests </span>
                  </a>

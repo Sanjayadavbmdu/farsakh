@@ -18,55 +18,112 @@
     </div>
 
     <!-- Key Metrics Cards -->
-    <div class="row mt-4">
-        <div class="col-md-3">
-            <div class="card metric-card">
+    <div class="row row-cols-xxl-4 row-cols-md-2 row-cols-1 mt-4">
+        <div class="col">
+            <div class="card">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-start gap-2 justify-content-between">
                         <div>
-                            <h6 class="text-uppercase text-muted">Total Properties</h6>
-                            <h2 class="mb-0">120</h2>
+                            <h5 class="text-muted fs-13 fw-bold text-uppercase" title="Revenue">
+                                Total Value</h5>
+                            <h3 class="mt-2 mb-1 fw-bold">$1.25M</h3>
+                            <p class="mb-0 text-muted">
+                                <span class="text-success me-1"><i class="ri-arrow-up-line"></i>
+                                    15.34%</span>
+                                <span class="text-nowrap">Since last month</span>
+                            </p>
                         </div>
-                        <div class="icon-circle bg-theme">
-                            <i class="fas fa-building text-white"></i>
+                        <div class="avatar-lg flex-shrink-0">
+                            <span class="avatar-title bg-success-subtle text-success rounded fs-28">
+                                <iconify-icon icon="solar:wallet-bold-duotone"></iconify-icon>
+                            </span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="col-md-3">
-            <div class="card metric-card">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h6 class="text-uppercase text-muted">Total Tenants</h6>
-                            <h2 class="mb-0">300</h2>
-                        </div>
-                        <div class="icon-circle bg-theme">
-                            <i class="fas fa-users text-white"></i>
-                        </div>
-                    </div>
-                </div>
+                <div class="apex-charts" id="chart-revenue"></div>
             </div>
-        </div>
+        </div><!-- end col -->
 
-        <div class="col-md-3">
-            <div class="card metric-card">
+        <div class="col">
+            <div class="card">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-start gap-2 justify-content-between">
                         <div>
-                            <h6 class="text-uppercase text-muted">Total Revenue</h6>
-                            <h2 class="mb-0">$1.2M</h2>
+                            <h5 class="text-muted fs-13 fw-bold text-uppercase" title="Products Sold">
+                                Active Contracts</h5>
+                            <h3 class="mt-2 mb-1 fw-bold">48</h3>
+                            <p class="mb-0 text-muted">
+                                <span class="text-success me-1"><i class="ri-arrow-up-line"></i>
+                                    10.12%</span>
+                                <span class="text-nowrap">Since last month</span>
+                            </p>
                         </div>
-                        <div class="icon-circle bg-theme">
-                            <i class="fas fa-dollar-sign text-white"></i>
+                        <div class="avatar-lg flex-shrink-0">
+                            <span class="avatar-title bg-info-subtle text-info rounded fs-28">
+                                <iconify-icon icon="solar:cart-bold-duotone"></iconify-icon>
+                            </span>
                         </div>
                     </div>
                 </div>
+
+                <div class="apex-charts" id="chart-products"></div>
             </div>
-        </div>
-    </div>
+        </div><!-- end col -->
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-2 justify-content-between">
+                        <div>
+                            <h5 class="text-muted fs-13 fw-bold text-uppercase" title="New Customers">
+                                Pending Requests</h5>
+                            <h3 class="mt-2 mb-1 fw-bold">1</h3>
+                            <p class="mb-0 text-muted">
+                                <span class="text-danger me-1"><i class="ri-arrow-down-line"></i>
+                                    5.47%</span>
+                                <span class="text-nowrap">Since last month</span>
+                            </p>
+                        </div>
+                        <div class="avatar-lg flex-shrink-0">
+                            <span class="avatar-title bg-warning-subtle text-warning rounded fs-28">
+                                <iconify-icon icon="solar:user-bold-duotone"></iconify-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="apex-charts" id="chart-customers"></div>
+            </div>
+        </div><!-- end col -->
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-2 justify-content-between">
+                        <div>
+                            <h5 class="text-muted fs-13 fw-bold text-uppercase" title="Profit Margin">
+                                Late Payments</h5>
+                            <h3 class="mt-2 mb-1 fw-bold">3</h3>
+                            <p class="mb-0 text-muted">
+                                <span class="text-success me-1"><i class="ri-arrow-up-line"></i>
+                                    8.21%</span>
+                                <span class="text-nowrap">Since last month</span>
+                            </p>
+                        </div>
+                        <div class="avatar-lg flex-shrink-0">
+                            <span class="avatar-title bg-primary-subtle text-primary rounded fs-28">
+                                <iconify-icon icon="solar:graph-up-bold-duotone"></iconify-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="apex-charts" id="chart-profit"></div>
+            </div>
+        </div><!-- end col -->
+
+    </div><!-- end row -->
 
     <!-- Charts & Main Content -->
     <div class="row">
@@ -92,6 +149,9 @@
                     <ul class="list-unstyled">
                         <li class="mb-3"><i class="fas fa-check-circle text-success"></i> 85 Active Contracts</li>
                         <li class="mb-3"><i class="fas fa-exclamation-circle text-warning"></i> 10 Pending Approvals</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success"></i> 85 Active Contracts</li>
+                        {{-- <li class="mb-3"><i class="fas fa-exclamation-circle text-warning"></i> 10 Pending Approvals</li> --}}
+                        
                     </ul>
                 </div>
             </div>

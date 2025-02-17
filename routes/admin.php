@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/login', [AuthController::class, 'authenticate']);
+Route::get('lang/home', [LangController::class, 'index']);
+
+Route::get('lang/change', [LangController::class, 'change'])->name('changeLang');
 
 Route::middleware('admin')->group(function () {
     Route::get('/dashboard', function () {

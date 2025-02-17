@@ -5,11 +5,11 @@
             <!-- Brand Logo -->
             <a href="index.html" class="logo">
                 <span class="logo-light">
-                    <span class="logo-lg"><img src="https://bmdublog.com/farsakh-website/logo.png" alt="logo"
+                    <span class="logo-lg"><img src="https://bmdublog.com/farsakh-website/assets/logo/logo-farsakh.jpeg" alt="logo"
                             style="
                         height: 50px;
                         "></span>
-                    <span class="logo-sm"><img src="https://bmdublog.com/farsakh-website/logo.png"
+                    <span class="logo-sm"><img src="https://bmdublog.com/farsakh-website/assets/logo/logo-farsakh.jpeg"
                             alt="small logo"></span>
                 </span>
 
@@ -38,24 +38,25 @@
         <div class="d-flex align-items-center gap-2">
 
 
-            <!-- Language Dropdown -->
-    <div class="topbar-item">
-        <div class="dropdown">
-            <button class="topbar-link" data-bs-toggle="dropdown" style="color: #2d714e;" 
-                    data-bs-offset="0,32" type="button" aria-haspopup="false" aria-expanded="false">
-                <span id="selectedLang">En</span>
-            </button>
-            <div class="dropdown-menu dropdown-menu-end">
-                <a href="#" class="dropdown-item change-lang" data-lang="en">English</a>
-                <a href="#" class="dropdown-item change-lang" data-lang="ar">العربية</a>
-            </div>
+    <!-- Language Dropdown -->
+<div class="topbar-item">
+    <div class="dropdown">
+        <button class="topbar-link" data-bs-toggle="dropdown" style="color: #2d714e;" type="button">
+            <span id="selectedLang">
+                {{ session()->get('locale', 'en') == 'en' ? 'English' : 'العربية' }}
+            </span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-end">
+                <a class="dropdown-item" href="{{ url('admin/lang/change?lang=en') }}">English</a>
+                <a class="dropdown-item" href="{{ url('admin/lang/change?lang=ar') }}">العربية</a>
         </div>
     </div>
+</div>
 
 
 
             <!-- Google Translate Element -->
-<div id="google_translate_element" style="display:none;"></div>
+            {{-- <div id="google_translate_element" style="display:none;"></div> --}}
 
 
 
@@ -73,7 +74,7 @@
                         <div class="p-2 border-bottom position-relative border-dashed">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h6 class="m-0 fs-16 fw-semibold"> Notifications</h6>
+                                    <h6 class="m-0 fs-16 fw-semibold">{{ translate(' Notifications')}}</h6>
                                 </div>
                                 <div class="col-auto">
                                     <div class="dropdown">
@@ -83,13 +84,13 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
                                             <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Mark as Read</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"> {{ translate('Mark as Read')}}</a>
                                             <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Delete All</a>
+                                            <a href="javascript:void(0);" class="dropdown-item">{{ translate('Delete All')}}</a>
                                             <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Do not Disturb</a>
+                                            <a href="javascript:void(0);" class="dropdown-item">{{ translate('Do not Disturb')}}</a>
                                             <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Other Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item">{{ translate('Other Settings')}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -105,7 +106,7 @@
                                             alt="" />
                                     </span>
                                     <span class="flex-grow-1 text-muted">
-                                        <span class="fw-medium text-body">Glady Haid</span> commented on <span
+                                        <span class="fw-medium text-body">{{ translate('Glady Haid')}}</span> {{ translate('commented on')}} <span
                                             class="fw-medium text-body">Abstack admin status</span>
                                         <br />
                                         <span class="fs-12">25m ago</span>
@@ -250,19 +251,20 @@
                         <i class="ri-arrow-down-s-line d-none d-lg-block align-middle ms-2"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
-                       
+
 
                         <div class="dropdown-divider"></div>
 
 
 
                         <!-- item-->
-                        <form action="{{route('admin.logout')}}" method="POST">
+                        <form action="{{ route('admin.logout') }}" method="POST">
                             @csrf
-                        <button type="submit" href="javascript:void(0);" class="dropdown-item fw-semibold text-danger">
-                            <i class="ri-logout-box-line me-1 fs-16 align-middle"></i>
-                            <span class="align-middle">Sign Out</span>
-                        </button>
+                            <button type="submit" href="javascript:void(0);"
+                                class="dropdown-item fw-semibold text-danger">
+                                <i class="ri-logout-box-line me-1 fs-16 align-middle"></i>
+                                <span class="align-middle">Sign Out</span>
+                            </button>
                         </form>
                     </div>
                 </div>

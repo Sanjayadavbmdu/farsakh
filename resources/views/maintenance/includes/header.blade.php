@@ -9,8 +9,7 @@
                             style="
                         height: 50px;
                         "></span>
-                    <span class="logo-sm"><img src="https://bmdublog.com/farsakh-website/logo.png"
-                            alt="small logo"></span>
+                    <span class="logo-sm"><img src="https://bmdublog.com/farsakh-website/logo.png" alt="small logo"></span>
                 </span>
 
                 <span class="logo-dark">
@@ -39,23 +38,24 @@
 
 
             <!-- Language Dropdown -->
-    <div class="topbar-item">
-        <div class="dropdown">
-            <button class="topbar-link" data-bs-toggle="dropdown" style="color: #2d714e;" 
-                    data-bs-offset="0,32" type="button" aria-haspopup="false" aria-expanded="false">
-                <span id="selectedLang">En</span>
-            </button>
-            <div class="dropdown-menu dropdown-menu-end">
-                <a href="#" class="dropdown-item change-lang" data-lang="en">English</a>
-                <a href="#" class="dropdown-item change-lang" data-lang="ar">العربية</a>
+            <!-- Language Switcher -->
+            <div class="topbar-item">
+                <div class="dropdown">
+                    <button class="topbar-link" data-bs-toggle="dropdown" style="color: #2d714e;" data-bs-offset="0,32"
+                        type="button" aria-haspopup="false" aria-expanded="false">
+                        <span id="selectedLang">English</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('en')">English</a>
+                        <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('ar')">العربية</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
 
 
             <!-- Google Translate Element -->
-<div id="google_translate_element" style="display:none;"></div>
+            <div id="google_translate_element" style="display:none;"></div>
 
 
 

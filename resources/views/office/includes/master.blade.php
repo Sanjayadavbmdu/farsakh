@@ -110,6 +110,28 @@
             color: white;
         }
     </style>
+
+<style>
+    /* Dark Green Theme */
+    .bg-dark-green {
+        background-color: #2d714e !important;
+    }
+
+    /* Custom Button */
+    .btn-dark-green {
+        background-color: #2d714e;
+        color: white;
+        border-radius: 8px;
+    }
+
+    .btn-dark-green:hover {
+        background-color: #22583d;
+    }
+
+   
+
+  
+</style>
 </head>
 
 <body>

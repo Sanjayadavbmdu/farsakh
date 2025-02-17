@@ -28,28 +28,4 @@
   <script src="{{asset('tenant/assets/vendor/datatables.net-select/js/dataTables.select.min.js')}}"></script>
 
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".change-lang").forEach(item => {
-            item.addEventListener("click", function () {
-                let selectedLang = this.getAttribute("data-lang");
-                
-                // Update direction based on language
-                if (selectedLang === "ar") {
-                    document.documentElement.setAttribute("dir", "rtl");
-                } else {
-                    document.documentElement.setAttribute("dir", "ltr");
-                }
-
-                // Optional: Save selection in localStorage
-                localStorage.setItem("selectedLang", selectedLang);
-            });
-        });
-
-        // Load saved language preference
-        let savedLang = localStorage.getItem("selectedLang");
-        if (savedLang) {
-            document.documentElement.setAttribute("dir", savedLang === "ar" ? "rtl" : "ltr");
-        }
-    });
-</script>
+ 
